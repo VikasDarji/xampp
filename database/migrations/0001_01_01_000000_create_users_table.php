@@ -17,6 +17,13 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+
+            // 👇 Added fields for Filament UserResource
+            $table->string('phone')->nullable();
+            $table->integer('age')->nullable();
+            $table->string('gender')->nullable();
+            $table->string('status')->default('draft');
+
             $table->rememberToken();
             $table->timestamps();
         });
